@@ -26,7 +26,7 @@ module.exports = {
                             ['@babel/plugin-proposal-class-properties', { loose: true }],
                             ['@babel/plugin-proposal-private-methods', { loose: true }],
                             ['@babel/plugin-transform-private-property-in-object', { loose: true }],
-                            ['babel-plugin-react-css-modules', { filetypes: { '.scss': { syntax: 'postcss-scss' } } }],
+                            ['react-css-modules', { filetypes: { '.scss': { syntax: 'postcss-scss' } } }],
                         ],
                     },
                 },
