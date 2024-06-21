@@ -38,7 +38,7 @@ const PrivateRoute = connect((state) => {
         anonymous: isAnonymous(state)
     }
 })(
-    ({ component: Component, ...rest, anonymous, authenticated }) => (
+    ({ component: Component, anonymous, authenticated, ...rest }) => (
         <Route {...rest} render={props => (
             (authenticated && !anonymous) ? (
                 <Component {...props}/>

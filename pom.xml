@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <parent>
         <groupId>org.broadleafcommerce</groupId>
@@ -15,8 +15,8 @@
     <version>6.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Broadleaf Spring Boot React Starter</name>
-    <url>http://www.blc-archetype.com</url>    
-    
+    <url>http://www.blc-archetype.com</url>
+
     <licenses>
         <license>
             <name>CC0 1.0 Universal</name>
@@ -44,11 +44,12 @@
 
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        
+        <jrebel.agent.args></jrebel.agent.args>
+        <debug.port>8085</debug.port>
         <debug.args>-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=${debug.port}</debug.args>
         <boot.jvm.memory>-Xmx1536M</boot.jvm.memory>
         <boot.jvm.args>${boot.jvm.memory} ${debug.args}</boot.jvm.args>
-        
+
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.uri>${project.baseUri}</project.uri>
     </properties>
@@ -70,7 +71,7 @@
             <plugin>
                 <groupId>org.zeroturnaround</groupId>
                 <artifactId>jrebel-maven-plugin</artifactId>
-                <version>1.1.7</version>
+                <version>1.2.0</version>
                 <executions>
                     <execution>
                         <id>generate-rebel-xml</id>
@@ -81,59 +82,10 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>license-maven-plugin</artifactId>
-                <version>1.5</version>
-                <configuration>
-                    <verbose>false</verbose>
-                    <addSvnKeyWords>false</addSvnKeyWords>
-                    <addJavaLicenseAfterPackage>false</addJavaLicenseAfterPackage>
-                    <organizationName>Broadleaf Commerce</organizationName>
-                    <inceptionYear>2009</inceptionYear>
-                    <licenseName>blc_cc0</licenseName>
-                    <licenseResolver>${project.uri}/licenses</licenseResolver>
-                    <excludes>
-                        <exclude>**/*.sql</exclude>
-                        <exclude>**/*.html</exclude>
-                        <exclude>**/*font-awesome*</exclude>
-                        <exclude>**/*jquery*</exclude>
-                        <exclude>**/*modernizr*</exclude>
-                        <exclude>**/*responsive-tables*</exclude>
-                        <exclude>**/spectrum.css</exclude>
-                        <exclude>**/spectrum.js</exclude>
-                        <exclude>**/redactor.js</exclude>
-                        <exclude>**/fontcolor.js</exclude>
-                        <exclude>**/fontsize.js</exclude>
-                        <exclude>**/typeahead.bundle.js</exclude>
-                        <exclude>**/sitemap/**/*.xml</exclude>
-                        <exclude>**/bootstrap*.css</exclude>
-                        <exclude>**/carousel*.css</exclude>
-                        <exclude>**/*.json</exclude>
-                        <exclude>**/material-kit.css</exclude>
-                    </excludes>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>first</id>
-                        <goals>
-                            <goal>update-file-header</goal>
-                            <goal>update-project-license</goal>
-                        </goals>
-                        <phase>process-sources</phase>
-                        <configuration>
-                            <roots>
-                                <root>src/main</root>
-                                <root>src/test</root>
-                                <root>app</root>
-                            </roots>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
+
         </plugins>
     </build>
-    
+
     <profiles>
         <profile>
             <id>jrebel</id>
@@ -142,7 +94,7 @@
             </properties>
         </profile>
     </profiles>
-    
+
     <dependencyManagement>
         <dependencies>
             <dependency>
