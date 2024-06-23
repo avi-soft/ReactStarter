@@ -13,12 +13,12 @@
     ["module-resolver", {
       "root": ["./app"],
       "alias": {
-        "catalog": "./catalog",
-        "core": "./core",
-        "server": "./server",
-        "client": "./client",
-        "menu": "./menu",
-        "layout": "./layout"
+        // "catalog": "./catalog",
+        // "core": "./core",
+        // "server": "./server",
+        // "client": "./client",
+        // "menu": "./menu",
+        // "layout": "./layout"
       }
     }]
   ]

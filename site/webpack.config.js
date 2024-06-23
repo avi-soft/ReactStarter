@@ -62,9 +62,19 @@ module.exports = {
         devMiddleware: {
             writeToDisk: true,
         },
+        historyApiFallback: true, // Enable this if you are using client-side routing
     },
+
     resolve: {
         extensions: ['.js', '.jsx'],
         modules: ['node_modules', path.resolve(__dirname, "app")],
+        alias: {
+            'catalog': path.resolve(__dirname, 'app/catalog'),
+            'core': path.resolve(__dirname, 'app/core'),
+            'server': path.resolve(__dirname, 'app/server'),
+            'client': path.resolve(__dirname, 'app/client'),
+            'menu': path.resolve(__dirname, 'app/menu'),
+            'layout': path.resolve(__dirname, 'app/layout')
+        },
     },
 };
