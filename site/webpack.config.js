@@ -35,7 +35,12 @@ module.exports = {
                 test: /\.scss$/,
                 use: [
                     MiniCssExtractPlugin.loader,
-                    'css-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            modules: true,
+                        },
+                    },
                     'sass-loader',
                 ],
                 include: [path.resolve(__dirname, 'app')],
@@ -44,7 +49,19 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './app/client/main.js', // Adjust as needed
+            title: 'React App', // Title of the generated HTML file
+            templateContent: `
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <meta charset="UTF-8">
+                    <title>React App</title>
+                </head>
+                <body>
+                    <div id="root"></div>
+                </body>
+                </html>
+            `,
         }),
         new MiniCssExtractPlugin({
             filename: 'styles.css',

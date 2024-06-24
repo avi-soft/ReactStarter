@@ -82,7 +82,7 @@ const WishlistItem = ({
     moveItemToCart,
     removeItemFromWishlist,
     updateQuantityInWishlist,
-    ...orderItem,
+    ...orderItem
 }) => {
 
     const {

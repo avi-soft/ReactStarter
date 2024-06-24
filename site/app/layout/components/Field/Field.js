@@ -63,7 +63,7 @@ const getComponent = type => {
 
 export const Field = ({
     type,
-    ...rest,
+    ...rest
 }) => (
     <ReduxFormField
         {...rest}
@@ -72,8 +72,8 @@ export const Field = ({
 )
 
 export const FieldGroup = ({
-    ...rest,
     children,
+    ...rest
 }) => (
     <div styleName='FieldGroup' {...rest}>
         {children}
@@ -91,7 +91,7 @@ export const Form = ({
 
 export const FormError = ({
     message,
-    ...rest,
+    ...rest
 }) => (
     <div styleName='FormError' {...rest}>
         {message}
