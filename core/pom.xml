@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <groupId>com.mycompany</groupId>
         <artifactId>boot-react-starter</artifactId>
@@ -15,32 +16,67 @@
 
     <properties>
         <project.uri>${project.baseUri}/../</project.uri>
+        <broadleaf.framework.version>5.2.3-GA</broadleaf.framework.version>
+        <broadleaf.contentmanagement.version>5.2.3-GA</broadleaf.contentmanagement.version>
+        <broadleaf.profile.version>5.2.3-GA</broadleaf.profile.version>
+        <broadleaf.menu.version>5.2.3-GA</broadleaf.menu.version>
+        <broadleaf.payment.gateway.version>5.2.3-GA</broadleaf.payment.gateway.version>
     </properties>
+
+    <repositories>
+        <repository>
+            <id>broadleaf-repo</id>
+            <name>Broadleaf Commerce Repository</name>
+            <url>https://nexus2.broadleafcommerce.org/repository/public/</url>
+        </repository>
+    </repositories>
 
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot</artifactId>
+            <artifactId>spring-boot-starter</artifactId>
         </dependency>
         <dependency>
             <groupId>org.broadleafcommerce</groupId>
             <artifactId>broadleaf-framework</artifactId>
+            <version>${broadleaf.framework.version}</version>
         </dependency>
         <dependency>
             <groupId>org.broadleafcommerce</groupId>
             <artifactId>broadleaf-contentmanagement-module</artifactId>
+            <version>${broadleaf.contentmanagement.version}</version>
         </dependency>
         <dependency>
             <groupId>org.broadleafcommerce</groupId>
             <artifactId>broadleaf-profile</artifactId>
+            <version>${broadleaf.profile.version}</version>
         </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.broadleafcommerce</groupId>-->
+<!--            <artifactId>broadleaf-menu</artifactId>-->
+<!--            <version>${broadleaf.menu.version}</version>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>org.broadleafcommerce</groupId>
             <artifactId>broadleaf-menu</artifactId>
+            <version>3.0.1-GA</version>
         </dependency>
+
+<!--        <dependency>-->
+<!--            <groupId>org.broadleafcommerce</groupId>-->
+<!--            <artifactId>broadleaf-sample-payment-gateway</artifactId>-->
+<!--            <version>${broadleaf.payment.gateway.version}</version>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>org.broadleafcommerce</groupId>
             <artifactId>broadleaf-sample-payment-gateway</artifactId>
+            <version>4.0.0-GA</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.annotation</groupId>
+            <artifactId>javax.annotation-api</artifactId>
+            <version>1.3.2</version>
         </dependency>
     </dependencies>
 </project>

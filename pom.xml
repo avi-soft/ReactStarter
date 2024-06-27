@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <parent>
         <groupId>org.broadleafcommerce</groupId>
@@ -15,8 +16,8 @@
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Broadleaf Spring Boot React Starter</name>
-    <url>http://www.blc-archetype.com</url>    
-    
+    <url>http://www.blc-archetype.com</url>
+
     <licenses>
         <license>
             <name>CC0 1.0 Universal</name>
@@ -41,16 +42,15 @@
 
     <properties>
         <broadleaf-api-authentication.version>1.0.0-SNAPSHOT</broadleaf-api-authentication.version>
-
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        
-        <debug.args>-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=${debug.port}</debug.args>
+        <debug.port>8000</debug.port>
+        <debug.args>-Ddebug</debug.args>
         <boot.jvm.memory>-Xmx1536M</boot.jvm.memory>
         <boot.jvm.args>${boot.jvm.memory} ${debug.args}</boot.jvm.args>
-        
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.uri>${project.baseUri}</project.uri>
+        <jrebel.agent.args>-agentpath:/path/to/jrebel/lib/libjrebel64.so</jrebel.agent.args>
     </properties>
 
     <build>
@@ -65,6 +65,9 @@
                 </plugin>
 
             </plugins>
+
+
+
         </pluginManagement>
         <plugins>
             <plugin>
@@ -133,7 +136,7 @@
             </plugin>
         </plugins>
     </build>
-    
+
     <profiles>
         <profile>
             <id>jrebel</id>
@@ -142,7 +145,7 @@
             </properties>
         </profile>
     </profiles>
-    
+
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -154,6 +157,11 @@
                 <groupId>org.broadleafcommerce</groupId>
                 <artifactId>broadleaf-api-authentication</artifactId>
                 <version>${broadleaf-api-authentication.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.annotation</groupId>
+                <artifactId>javax.annotation-api</artifactId>
+                <version>1.3.2</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

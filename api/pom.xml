@@ -17,11 +17,11 @@
         <debug.port>8002</debug.port>
         <project.uri>${project.baseUri}/../</project.uri>
     </properties>
-    
+
     <build>
         <finalName>api</finalName>
         <plugins>
-            <plugin>
+            <!--<plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
                 <executions>
@@ -31,7 +31,7 @@
                         <goals>
                             <goal>copy</goal>
                         </goals>
-                        <configuration>
+&lt;!&ndash;                        <configuration>
                             <artifactItems>
                                 <artifactItem>
                                     <groupId>com.broadleafcommerce</groupId>
@@ -42,13 +42,14 @@
                                     <outputDirectory>target/classes/css</outputDirectory>
                                 </artifactItem>
                             </artifactItems>
-                        </configuration>
+                        </configuration>&ndash;&gt;
                     </execution>
                 </executions>
-            </plugin>
+            </plugin>-->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+
             </plugin>
         </plugins>
     </build>
